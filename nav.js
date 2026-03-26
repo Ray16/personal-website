@@ -12,8 +12,7 @@ document.getElementById('nav-toggle').addEventListener('click', function () {
     if (!toggle) return;
 
     var saved = localStorage.getItem('theme');
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = saved || (prefersDark ? 'dark' : 'light');
+    var theme = saved || 'light';
 
     function applyTheme(t) {
         document.documentElement.setAttribute('data-theme', t);
