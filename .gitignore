@@ -1,0 +1,14 @@
+# Admin tools (local only)
+server.py
+admin.html
+admin.js
+.backups/
+
+# System files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/
