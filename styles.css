@@ -219,12 +219,18 @@ img {
 
 .dark-bg a {
     color: var(--color-link-dark);
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 204, 204, 0.45);
+    padding-bottom: 1px;
+    transition: color var(--transition-speed), border-bottom-color var(--transition-speed), border-bottom-style var(--transition-speed);
 }
 
 .dark-bg a:hover {
-    color: var(--color-link-dark-hover);
-    opacity: 0.85;
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+    border-bottom-style: solid;
+    text-decoration: none;
+    opacity: 1;
 }
 
 .dark-bg ol,
@@ -309,17 +315,75 @@ img {
     color: var(--color-text-light);
 }
 
+.news-year-group {
+    position: relative;
+    margin-left: 14px;
+    padding-left: 28px;
+    padding-bottom: 8px;
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.news-year-group + .news-year-group {
+    padding-top: var(--spacing-lg);
+}
+
 .news-year {
-    font-size: 28px;
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
     font-weight: 700;
+    letter-spacing: 1px;
     color: var(--color-text-light);
-    margin-bottom: var(--spacing-sm);
-    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    margin-left: -44px;
+    padding: 4px 14px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
 }
 
 .news-section p {
-    margin-bottom: 14px;
-    line-height: 1.8;
+    position: relative;
+    margin: 0 0 10px 0;
+    padding: 6px 0 6px 4px;
+    line-height: 1.7;
+    transition: transform 0.15s ease;
+}
+
+.news-section p::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 15px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 0 3px var(--color-primary);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.news-section p:hover::before {
+    background: #ffcccc;
+}
+
+.news-section p:hover {
+    transform: translateX(2px);
+}
+
+.news-section time {
+    display: inline-block;
+    padding: 0 8px;
+    margin-right: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: #ffffff;
+}
+
+.news-section p:hover time {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* News year filter */
@@ -515,6 +579,78 @@ a:focus-visible {
 .link-list li .link-desc {
     color: var(--color-text-muted);
     font-size: 13px;
+}
+
+/* Pill-style layout for link-only <p> on regular (non-dark-bg) pages */
+.page-section p:has(> a:only-child) {
+    display: inline-block;
+    margin: 4px 8px 4px 0;
+}
+
+.page-section p:has(> a:only-child) > a {
+    display: inline-block;
+    padding: 7px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    color: var(--color-text-light);
+    font-size: 14px;
+    text-decoration: none;
+    transition: background var(--transition-speed), border-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+}
+
+.page-section p:has(> a:only-child) > a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* Plain-text <p> between pill groups keeps normal block flow */
+.page-section p:not(:has(> a:only-child)) {
+    display: block;
+    margin-top: var(--spacing-md);
+}
+
+/* ============================================
+   Scroll to top button
+   ============================================ */
+.scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-speed), transform var(--transition-speed), background var(--transition-speed);
+    z-index: 50;
+    font-family: var(--font-body);
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-top:hover {
+    background: #a00000;
+    transform: translateY(-3px);
+}
+
+.scroll-top:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
 }
 
 /* ============================================
