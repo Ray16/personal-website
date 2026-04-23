@@ -12,3 +12,6 @@ admin.js
 
 # Claude Code
 .claude/
+
+# Scraper venv (recreate from scripts/requirements.txt)
+.venv-scrape/
