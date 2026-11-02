@@ -20,7 +20,11 @@ PAST_FORMS={
 
 
 def event_end(time):
-    start=date.fromisoformat(time['datetime'])
+    value=time['datetime']
+    if re.fullmatch(r'\d{4}-\d{2}',value):
+        year,month=map(int,value.split('-'))
+        return date(year,month,calendar.monthrange(year,month)[1])
+    start=date.fromisoformat(value)
     if time.get('data-end-date'):
         return date.fromisoformat(time['data-end-date'])
     label=time.get_text(' ',strip=True)

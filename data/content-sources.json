@@ -1,0 +1,11 @@
+{
+  "experience": {
+    "source": "assets/pdfs/Resume.pdf",
+    "compiled_on": "2026-10-16",
+    "sha256": "1686ecb80b44dd79275db3b70486515ed765dfe899580a72f7c3ee89a6883ecc"
+  },
+  "publications": {
+    "source": "https://scholar.google.com/citations?user=3KJaM3sAAAAJ&hl=en",
+    "checked_on": "2026-11-02"
+  }
+}

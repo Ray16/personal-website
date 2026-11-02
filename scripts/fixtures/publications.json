@@ -1,0 +1,156 @@
+{
+  "profile_id": "3KJaM3sAAAAJ",
+  "updated_from_scholar": "2026-11-02",
+  "publications": [
+    {
+      "title": "Discovery of stacking heterogeneity, layer buckling, and residual water in COF-999-NH2 and implications on CO2 capture",
+      "authors": "H Daglar, Z Zhou, R Zhu, P Parihar, JI Siepmann, OM Yaghi, L Gagliardi",
+      "year": 2026,
+      "venue": "Journal of the American Chemical Society 148 (1), 1614-1622",
+      "url": "https://doi.org/10.1021/jacs.5c18608",
+      "kind": "article",
+      "scholar_id": "3KJaM3sAAAAJ:hqOjcs7Dif8C",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:hqOjcs7Dif8C"
+    },
+    {
+      "scholar_id": "3KJaM3sAAAAJ:5nxA0vEk-isC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:5nxA0vEk-isC",
+      "title": "The ModelSEED Biochemistry Database, 2026 update: grading multi-source thermodynamics",
+      "authors": "Andrew Freiburger, José P Faria, Ray Zhu, Janaka N Edirisinghe, Filipe Liu, Cooper Taylor, Vibhav Setlur, Robert T Giessmann, Moritz E Beber, Elad Noor, Vikas Upadhyay, Mohit Anand, Costas D Maranas, Sebastian Huß, Zoran Nikoloski, Adam P Arkin, Robert W Cottingham, Elisha M Wood-Charlson, Arvind Ramanathan, Christopher S Henry, Samuel MD Seaver",
+      "venue": "bioRxiv, 2026.09. 15.751859",
+      "year": 2026,
+      "url": "https://www.biorxiv.org/content/10.64898/2026.09.15.751859.abstract",
+      "kind": "preprint"
+    },
+    {
+      "title": "Bayesian optimization hackathon for chemistry and materials",
+      "authors": "S Baird, M Ansari, Z Afzal, Q Ai, A Al-Feghali, M Alain, M Altamirano, et al.",
+      "year": 2025,
+      "venue": "ChemRxiv 2025 (0623)",
+      "url": "https://chemrxiv.org/engage/chemrxiv/article-details/684a100a1a8f9bdab5a80a26",
+      "kind": "preprint",
+      "scholar_id": "3KJaM3sAAAAJ:UebtZRa9Y70C",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:UebtZRa9Y70C"
+    },
+    {
+      "title": "Cartesian equivariant representations for learning and understanding molecular orbitals",
+      "authors": "DS King, D Grzenda, R Zhu, N Hudson, I Foster, B Cheng, L Gagliardi",
+      "year": 2025,
+      "venue": "Proceedings of the National Academy of Sciences 122 (48), e2510235122",
+      "url": "https://doi.org/10.1073/pnas.2510235122",
+      "kind": "article",
+      "scholar_id": "3KJaM3sAAAAJ:0EnyYjriUFMC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:0EnyYjriUFMC",
+      "thumbnail": {
+        "path": "assets/pubs/pnas-king-2025.jpg",
+        "source_page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12685098/",
+        "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12685098/supplementaryFiles",
+        "label": "Figure 2 from the paper"
+      }
+    },
+    {
+      "title": "Wide-ranging predictions of new stable compounds powered by recommendation engines",
+      "authors": "SD Griesemer, B Baldassarri, R Zhu, J Shen, K Pal, CW Park, et al.",
+      "year": 2025,
+      "venue": "Science Advances 11 (1), eadq1431",
+      "url": "https://www.science.org/doi/full/10.1126/sciadv.adq1431",
+      "kind": "article",
+      "scholar_id": "3KJaM3sAAAAJ:roLk4NBRz8UC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:roLk4NBRz8UC",
+      "thumbnail": {
+        "path": "assets/pubs/sci-adv-griesemer-2025.jpg",
+        "source_page": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11698120/",
+        "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11698120/supplementaryFiles",
+        "label": "Figure 1 from the paper"
+      }
+    },
+    {
+      "title": "A generative artificial intelligence framework based on a molecular diffusion model for the design of metal-organic frameworks for carbon capture",
+      "authors": "H Park, X Yan, R Zhu, EA Huerta, S Chaudhuri, D Cooper, I Foster, et al.",
+      "year": 2024,
+      "venue": "Communications Chemistry 7 (1), 21",
+      "url": "https://www.nature.com/articles/s42004-023-01090-2",
+      "kind": "article",
+      "scholar_id": "3KJaM3sAAAAJ:_FxGoFyzp5QC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:_FxGoFyzp5QC",
+      "thumbnail": {
+        "path": "assets/pubs/comm-chem-park-2024.jpg",
+        "source_page": "https://www.nature.com/articles/s42004-023-01090-2",
+        "source_url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs42004-023-01090-2/MediaObjects/42004_2023_1090_Fig1_HTML.png",
+        "label": "Figure 1 from the paper"
+      }
+    },
+    {
+      "title": "Reflections from the 2024 large language model (LLM) hackathon for applications in materials science and chemistry",
+      "authors": "Y Zimmermann, A Bazgir, Z Afzal, F Agbere, Q Ai, N Alampara, et al.",
+      "year": 2024,
+      "venue": "arXiv preprint arXiv:2411.15221",
+      "url": "https://arxiv.org/abs/2411.15221",
+      "kind": "preprint",
+      "scholar_id": "3KJaM3sAAAAJ:Se3iqnhoufwC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:Se3iqnhoufwC"
+    },
+    {
+      "title": "Center-environment deep transfer machine learning across crystal structures: from spinel oxides to perovskite oxides",
+      "authors": "Y Li, R Zhu, Y Wang, L Feng, Y Liu",
+      "year": 2023,
+      "venue": "npj Computational Materials 9 (1), 109",
+      "url": "https://www.nature.com/articles/s41524-023-01068-7",
+      "kind": "article",
+      "scholar_id": "3KJaM3sAAAAJ:WF5omc3nYNoC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:WF5omc3nYNoC",
+      "thumbnail": {
+        "path": "assets/pubs/npj-cm-li-2023.jpg",
+        "source_page": "https://www.nature.com/articles/s41524-023-01068-7",
+        "source_url": "https://www.nature.com/articles/s41524-023-01068-7",
+        "label": "Figure from the paper"
+      }
+    },
+    {
+      "title": "End-to-end AI framework for interpretable prediction of molecular and crystal properties",
+      "authors": "H Park, R Zhu, EA Huerta, S Chaudhuri, E Tajkhorshid, D Cooper",
+      "year": 2023,
+      "venue": "Machine Learning: Science and Technology 4 (2), 025036",
+      "url": "https://iopscience.iop.org/article/10.1088/2632-2153/acd434",
+      "kind": "article",
+      "scholar_id": "3KJaM3sAAAAJ:YsMSGLbcyi4C",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:YsMSGLbcyi4C"
+    },
+    {
+      "title": "How to Search for Stable Inorganic Compounds More Efficiently",
+      "authors": "S Griesemer, R Zhu, K Pal, C Park, L Ward, C Wolverton",
+      "year": 2023,
+      "venue": "APS March Meeting Abstracts 2023, A53. 007",
+      "url": "https://scholar.google.com/scholar?q=How+to+Search+for+Stable+Inorganic+Compounds+More+Efficiently+APS+March+Meeting",
+      "kind": "abstract",
+      "scholar_id": "3KJaM3sAAAAJ:zYLM7Y9cAGgC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:zYLM7Y9cAGgC"
+    },
+    {
+      "title": "Materials cartography: A forward-looking perspective on materials representation and devising better maps",
+      "authors": "SB Torrisi, MZ Bazant, AE Cohen, MG Cho, JS Hummelshøj, L Hung, et al.",
+      "year": 2023,
+      "venue": "APL Machine Learning 1 (2)",
+      "url": "https://scholar.google.com/scholar?q=Materials+cartography+forward-looking+perspective+materials+representation",
+      "kind": "article",
+      "scholar_id": "3KJaM3sAAAAJ:ufrVoPGSRksC",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:ufrVoPGSRksC",
+      "thumbnail": {
+        "path": "assets/pubs/apl-ml-torrisi-2023.jpg",
+        "source_page": "https://scholar.google.com/scholar?q=Materials+cartography+forward-looking+perspective+materials+representation",
+        "source_url": "https://pubs.aip.org/aip/aml/article/1/2/020901/2895963",
+        "label": "Figure from the paper"
+      }
+    },
+    {
+      "title": "Correlating research octane numbers of gasoline surrogates with high temperature oxidation characteristics",
+      "authors": "R Zhu",
+      "year": 2022,
+      "venue": "arXiv preprint arXiv:2201.00800",
+      "url": "https://arxiv.org/abs/2201.00800",
+      "kind": "preprint",
+      "scholar_id": "3KJaM3sAAAAJ:u5HHmVD_uO8C",
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&oe=ASCII&user=3KJaM3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=3KJaM3sAAAAJ:u5HHmVD_uO8C"
+    }
+  ]
+}

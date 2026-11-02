@@ -17,6 +17,9 @@ def find_image(content, page_url, expected_title):
     # A challenge page or a journal home page must never become a publication thumbnail.
     if not same_title(title,expected_title) and expected_title.lower() not in title.lower():
         return None
+    canonical=soup.select_one('link[rel="canonical"]')
+    if canonical and canonical.get('href','').startswith('https://'):
+        page_url=canonical['href']
     for image in soup.select('img'):
         description=' '.join([str(image.get('alt','')),str(image.get('class',''))]).lower()
         if any(term in description for term in ('graphical abstract','graphical-abstract','toc graphic','table of contents graphic')):

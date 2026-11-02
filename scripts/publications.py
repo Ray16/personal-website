@@ -3,7 +3,6 @@
 import argparse
 from copy import deepcopy
 from datetime import date
-from difflib import SequenceMatcher
 from html import escape
 import json
 from pathlib import Path

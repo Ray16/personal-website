@@ -7,6 +7,11 @@ if not (root/'server.py').exists() or not (root/'admin.js').exists():
     print('No existing local admin installation found; nothing to migrate.')
     sys.exit(0)
 if 'def _parse_card_entries' in (root/'server.py').read_text() and "holder.querySelector('.project-links')" in (root/'admin.js').read_text():
+    admin_path=root/'admin.js'
+    admin_source=admin_path.read_text()
+    admin_source=admin_source.replace('.poster-body > p:not(.eyebrow)', '.poster-body > p:not(.eyebrow):not(.entry-meta)').replace("holder.querySelector('.eyebrow')", "holder.querySelector('.entry-meta, .eyebrow')")
+    admin_source=admin_source.replace(':not(.entry-meta):not(.entry-meta)', ':not(.entry-meta)')
+    admin_path.write_text(admin_source)
     print('Local editor already supports the redesigned cards.')
     sys.exit(0)
 p=root/'server.py';s=p.read_text()
@@ -62,7 +67,7 @@ s=s.replace("        if (page === 'index.html') {\n            var startDate", "
             title.textContent = val(page === 'poster.html' ? 'f-title' : 'f-desc');
             if (!title.textContent.trim()) { toast('Title is required.', 'error'); return null; }
             if (page === 'poster.html') {
-                var description = holder.querySelector('.poster-body > p:not(.eyebrow)');
+                var description = holder.querySelector('.poster-body > p:not(.eyebrow):not(.entry-meta)');
                 if (description) description.textContent = val('f-desc');
                 var linkBox = holder.querySelector('.project-links');
                 if (linkBox) linkBox.innerHTML = getLinks().map(function (l) { return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + ' ↗</a>'; }).join('');
@@ -76,7 +81,7 @@ s=s.replace("        if (page === 'index.html') {\n            var startDate", "
                     (holder.querySelector('.project-links') || holder.querySelector('.talk-card')).appendChild(a);
                 }
                 if (val('f-date-start')) {
-                    var date = holder.querySelector('.eyebrow') || holder.querySelector('.talk-card > p');
+                    var date = holder.querySelector('.entry-meta, .eyebrow') || holder.querySelector('.talk-card > p');
                     if (date) date.textContent = formatDisplayDate(val('f-date-start'), val('f-date-end'));
                 }
             }

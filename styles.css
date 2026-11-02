@@ -208,3 +208,8 @@ h3 { font-size: 18px; }
     h1 { font-size: 30px; }
     .intro-text p { font-size: 16px; }
 }
+
+.project-card:has(.project-paper-figure) { display: grid; grid-template-columns: 170px minmax(0,1fr); gap: 28px; }
+.project-paper-figure img { width: 170px; height: auto; max-height: 160px; object-fit: contain; }
+.project-paper-figure figcaption { font-size: 11px; color: var(--muted); margin-top: 6px; }
+@media (max-width: 540px) { .project-card:has(.project-paper-figure) { grid-template-columns: 1fr; gap: 18px; } }

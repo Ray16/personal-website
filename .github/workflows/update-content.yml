@@ -1,0 +1,72 @@
+name: Update publications and CV
+
+on:
+  schedule:
+    - cron: '23 10 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: content-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install content dependencies
+        run: python -m pip install -r scripts/publication-requirements.txt
+      - name: Verify content update logic
+        run: python -m unittest discover -s scripts -p 'test_content.py'
+      - name: Import Google Scholar publications
+        id: scholar
+        continue-on-error: true
+        run: python scripts/publications.py
+      - name: Retrieve available paper-provided images
+        run: |
+          python scripts/refresh_thumbnails.py --limit 8
+          python scripts/publications.py --render-only
+      - name: Update dated event language
+        run: python scripts/refresh_news.py
+      - name: Refresh the compiled CV when configured
+        id: cv
+        continue-on-error: true
+        env:
+          OVERLEAF_CV_PDF_URL: ${{ secrets.OVERLEAF_CV_PDF_URL }}
+        run: python scripts/sync_cv.py
+      - name: Validate the resulting site
+        run: python scripts/check_site.py
+      - name: Commit updated public content
+        id: commit
+        run: |
+          git add data/publications.json publications.html index.html assets/pubs assets/pdfs/Resume.pdf
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Update publications and dated content from verified sources'
+            git pull --rebase origin main
+            git push origin main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Deploy changed content through the normal checks
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
+      - name: Report blocked source updates
+        if: steps.scholar.outcome == 'failure' || steps.cv.outcome == 'failure'
+        run: |
+          echo 'A remote source could not be updated. Existing content was preserved; inspect the failed source step.'
+          exit 1
