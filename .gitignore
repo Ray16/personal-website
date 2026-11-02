@@ -15,3 +15,7 @@ admin.js
 
 # Scraper venv (recreate from scripts/requirements.txt)
 .venv-scrape/
+
+# Build and Python cache
+dist/
+__pycache__/

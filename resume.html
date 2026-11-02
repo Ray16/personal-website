@@ -7,48 +7,49 @@
     <meta property="og:title" content="Ruijie (Ray) Zhu - Resume">
     <meta property="og:description" content="View and download Ray Zhu's resume.">
     <meta property="og:type" content="website">
-    <title>Ray - Resume</title>
+    <title>Ray Zhu — Resume</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="color-scheme" content="light dark">
+    <script src="theme-init.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <a class="skip-to-content" href="#main-content">Skip to content</a>
 
     <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="site-title">Ray</a>
+            <a href="index.html" class="site-title" aria-label="Ray Zhu, home">Ray Zhu<span class="brand-dot">.</span></a>
             <nav class="site-nav" aria-label="Main navigation">
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+                <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">Menu <span aria-hidden="true">☰</span></button>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html" class="active">Resume</a></li>
                     <li><a href="publications.html">Publications</a></li>
-                    <li><a href="hobby.html">Hobby</a></li>
-                    <li><a href="project.html">Project</a></li>
-                    <li><a href="poster.html">Poster</a></li>
-                    <li><a href="presentation.html">Presentation</a></li>
-                    <li><a href="link.html">Link</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="poster.html">Talks & Posters</a></li>
+                    <li><a href="hobby.html">Beyond research</a></li>
+                    <li><a href="resume.html" class="active" aria-current="page">CV</a></li>
                 </ul>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode"></button>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode"><span aria-hidden="true">◐</span></button>
             </nav>
         </div>
     </header>
 
-    <main id="main-content" class="content dark-bg">
+    <main id="main-content" class="content">
         <section class="section resume-section">
-            <h1>Resume</h1>
-            <p><a href="assets/pdfs/Resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a></p>
+            <div class="page-heading"><p class="eyebrow">Background &amp; experience</p><h1>Curriculum vitae</h1><p class="page-intro">Education, research experience, and professional activities.</p></div>
+            <p><a href="assets/pdfs/Resume.pdf" target="_blank" rel="noopener" class="button button-primary">Open CV (PDF) ↗</a></p>
             <iframe class="resume-embed" src="assets/pdfs/Resume.pdf" title="Resume PDF viewer"></iframe>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Ruijie (Ray) Zhu</p>
+        <div class="footer-inner"><p>&copy; 2026 Ruijie (Ray) Zhu <span class="footer-location">Chicago, Illinois</span></p>
+        <div class="footer-links"><a href="https://github.com/Ray16" target="_blank" rel="noopener">GitHub ↗</a><a href="https://scholar.google.com/citations?user=3KJaM3sAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar ↗</a><a href="link.html">Resources</a></div></div>
     </footer>
 
-    <script src="nav.js"></script>
+    <script src="nav.js" defer></script>
 </body>
 </html>

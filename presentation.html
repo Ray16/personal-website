@@ -7,51 +7,54 @@
     <meta property="og:title" content="Ruijie (Ray) Zhu - Presentations">
     <meta property="og:description" content="Slides and presentations on i-MAX phases, HT-DFT, and machine learning.">
     <meta property="og:type" content="website">
-    <title>Ray - Presentation</title>
+    <title>Ray Zhu — Presentation</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="color-scheme" content="light dark">
+    <script src="theme-init.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <a class="skip-to-content" href="#main-content">Skip to content</a>
 
     <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="site-title">Ray</a>
+            <a href="index.html" class="site-title" aria-label="Ray Zhu, home">Ray Zhu<span class="brand-dot">.</span></a>
             <nav class="site-nav" aria-label="Main navigation">
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+                <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">Menu <span aria-hidden="true">☰</span></button>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="resume.html">Resume</a></li>
                     <li><a href="publications.html">Publications</a></li>
-                    <li><a href="hobby.html">Hobby</a></li>
-                    <li><a href="project.html">Project</a></li>
-                    <li><a href="poster.html">Poster</a></li>
-                    <li><a href="presentation.html" class="active">Presentation</a></li>
-                    <li><a href="link.html">Link</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="poster.html" class="active">Talks & Posters</a></li>
+                    <li><a href="hobby.html">Beyond research</a></li>
+                    <li><a href="resume.html">CV</a></li>
                 </ul>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode"></button>
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode"><span aria-hidden="true">◐</span></button>
             </nav>
         </div>
     </header>
 
-    <main id="main-content" class="content dark-bg">
-        <section class="section page-section">
-            <h1>Slides</h1>
+    <main id="main-content" class="content">
+<div class="page-heading"><p class="eyebrow">Ideas in conversation</p><h1>Talks &amp; slides</h1><p class="page-intro">Presentations on computational materials science, high-throughput calculations, and machine learning.</p></div><nav class="talk-tabs" aria-label="Talks and posters"><a href="poster.html">Posters</a><a href="presentation.html" aria-current="page">Talks &amp; slides</a></nav><section class="section talk-list" aria-label="Presentations">
+            <article class="talk-card"><h2>Accelerated discovery of i-MAX phases via HT-DFT and ML</h2><p>Combining high-throughput computation and machine learning to explore layered materials.</p><a href="https://docs.google.com/presentation/d/1jaKJ8S8ZMrHF08aH-ytjrP6J_YNAuWbP6yitD-mxcPw/present" target="_blank" rel="noopener">View presentation ↗</a></article>
 
-            <p><a href="https://docs.google.com/presentation/d/1jaKJ8S8ZMrHF08aH-ytjrP6J_YNAuWbP6yitD-mxcPw/present" target="_blank" rel="noopener">Accelerated discovery of i-MAX phases via HT-DFT and ML</a></p>
+            <article class="talk-card"><h2>Searching for stable i-MAX phases</h2><p>March 11, 2022 · High-throughput DFT calculations and chemical similarity.</p><a href="https://docs.google.com/presentation/d/10zBJd1m72EfeRzeFJT6cRYf4l3sSy0bFRSokoi_Hpy4/present" target="_blank" rel="noopener">View presentation ↗</a></article>
 
-            <br>
-            <p><a href="https://docs.google.com/presentation/d/10zBJd1m72EfeRzeFJT6cRYf4l3sSy0bFRSokoi_Hpy4/present" target="_blank" rel="noopener">Searching for stable i-MAX phases via high-throughput DFT calculation and chemical similarity</a> <time datetime="2022-03-11">03/11/2022</time></p>
+            <article class="talk-card"><h2>Classical molecular &amp; materials modeling</h2><p>March 2024 · A course term-project presentation.</p><a href="https://www.youtube.com/watch?v=LE7n3lz_0Iw" target="_blank" rel="noopener">View presentation ↗</a></article>
+
+            <article class="talk-card"><h2>Artificial Intelligence for Materials Science</h2><p>July 2023 · A research presentation at the AIMS meeting.</p><a href="https://www.youtube.com/watch?v=gXU6pZXFn4E" target="_blank" rel="noopener">View presentation ↗</a></article>
+
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Ruijie (Ray) Zhu</p>
+        <div class="footer-inner"><p>&copy; 2026 Ruijie (Ray) Zhu <span class="footer-location">Chicago, Illinois</span></p>
+        <div class="footer-links"><a href="https://github.com/Ray16" target="_blank" rel="noopener">GitHub ↗</a><a href="https://scholar.google.com/citations?user=3KJaM3sAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar ↗</a><a href="link.html">Resources</a></div></div>
     </footer>
 
-    <script src="nav.js"></script>
+    <script src="nav.js" defer></script>
 </body>
 </html>
