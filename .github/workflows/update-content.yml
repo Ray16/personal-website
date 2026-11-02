@@ -1,4 +1,4 @@
-name: Update publications and CV
+name: Update dated content and CV
 
 on:
   schedule:
@@ -29,10 +29,12 @@ jobs:
       - name: Verify content update logic
         run: python -m unittest discover -s scripts -p 'test_content.py'
       - name: Import Google Scholar publications
+        if: vars.SCHOLAR_SYNC_ON_GITHUB == 'true'
         id: scholar
         continue-on-error: true
         run: python scripts/publications.py
       - name: Retrieve available paper-provided images
+        if: vars.SCHOLAR_SYNC_ON_GITHUB == 'true'
         run: |
           python scripts/refresh_thumbnails.py --limit 8
           python scripts/publications.py --render-only

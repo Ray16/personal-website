@@ -20,18 +20,19 @@ Paper images retain the original content and are only resized for display. Their
 
 ## Automatic updates
 
-`.github/workflows/update-content.yml` runs daily at 10:23 UTC and can also be started manually from GitHub Actions. It:
+The public Scholar profile is accessible from the user’s computer but returned HTTP 403 to GitHub’s runner during the first real test. Scholar synchronization therefore runs locally rather than pretending the cloud check succeeded.
 
-1. Reads the public Google Scholar profile `3KJaM3sAAAAJ`, validates the profile identity, and adds or updates records.
-2. Preserves existing papers when Scholar temporarily omits a record, and excludes explicitly recorded superseded versions.
-3. Attempts to retrieve missing TOC graphics or figures from the paper pages. It does not generate images or substitute journal logos.
-4. Updates explicit attendance/presentation wording after a dated event has ended, using Chicago time. For a date range, the script waits until the last day has passed. An optional `data-end-date` on the time element can specify an exact end date.
-5. Downloads the compiled CV **only when** an accessible PDF URL has been configured.
-6. Validates, commits changed content to `main`, and dispatches the normal deployment workflow.
+`scripts/local_update.py` runs daily at **10:15 local time** through the macOS LaunchAgent `us.ruijiezhu.website-scholar-sync`. It clones a temporary isolated checkout, reads Scholar, validates the identity, merges source-backed records, attempts actual paper images for new content, runs the content checks, and pushes only generated content changes. The regular GitHub deployment workflow then validates and publishes them. It does not commit or overwrite work in the user’s active checkout.
 
-A source access error does not erase existing content. A failed Scholar or configured CV update makes the workflow fail visibly after independent successful updates are preserved. Google Scholar and publisher access can be rate-limited; the automation does not bypass access challenges. The image importer is best effort.
+The computer needs to be awake and online, with the existing GitHub credential available. A missed calendar run is normally coalesced by launchd when the computer wakes. Logs are in `~/Library/Logs/PersonalWebsiteSync.log`. The installed schedule points to this checkout and its existing `.venv-scrape` environment; moving either requires updating the schedule. To test read access without writes, run `.venv-scrape/bin/python scripts/local_update.py --check`.
 
-The explicit deployment dispatch is needed because pushes made with `GITHUB_TOKEN` do not trigger push workflows. GitHub allows `workflow_dispatch` from that token: https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow.
+`.github/workflows/update-content.yml` independently runs daily at 10:23 UTC. It updates explicit attendance/presentation wording after the event ends, refreshes the compiled CV when its source has been configured, validates changes, commits them, and dispatches deployment. Cloud Scholar reads remain opt-in through the repository variable `SCHOLAR_SYNC_ON_GITHUB=true`; they are disabled by default because the runner was blocked in testing.
+
+Source failures never erase existing papers or the saved CV. Missing images are omitted rather than invented. Exclusions in `data/publication-overrides.json` keep superseded preprints and separately listed posters out of the main paper list.
+
+For news, same-month and cross-month date ranges are supported. A `data-end-date` on a time element can specify an exact end date. Only explicit attendance/presentation phrases are changed; the updater does not rewrite arbitrary biography text or infer new jobs.
+
+The cloud workflow explicitly dispatches deployment because pushes made with `GITHUB_TOKEN` do not trigger push workflows. GitHub allows `workflow_dispatch` from that token: https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow.
 
 ### Overleaf CV configuration — still pending
 
