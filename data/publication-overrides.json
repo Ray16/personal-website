@@ -1,0 +1,18 @@
+{
+  "exclude": {
+    "3KJaM3sAAAAJ:eQOLeE2rZwMC": "Preprint superseded by the Communications Chemistry paper.",
+    "3KJaM3sAAAAJ:IjCSPb-OGe4C": "Preprint superseded by the Machine Learning: Science and Technology paper.",
+    "3KJaM3sAAAAJ:LkGwnXOMwfcC": "Earlier version of the PNAS molecular-orbitals paper."
+  },
+  "records": {
+    "3KJaM3sAAAAJ:hqOjcs7Dif8C": {
+      "url": "https://doi.org/10.1021/jacs.5c18608"
+    },
+    "3KJaM3sAAAAJ:0EnyYjriUFMC": {
+      "url": "https://doi.org/10.1073/pnas.2510235122"
+    },
+    "3KJaM3sAAAAJ:WF5omc3nYNoC": {
+      "url": "https://www.nature.com/articles/s41524-023-01068-7"
+    }
+  }
+}

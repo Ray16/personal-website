@@ -72,18 +72,33 @@ with sync_playwright() as p:
     normal=browser.new_context(reduced_motion='no-preference',color_scheme='light')
     normal_page=normal.new_page()
     normal_page.goto(BASE+'/index.html',wait_until='networkidle')
-    assert normal_page.locator('.intro-text').evaluate('(el)=>getComputedStyle(el).animationName')=='enter'
+    assert normal_page.locator('.intro-text').evaluate('(el)=>getComputedStyle(el).animationName')=='none'
     assert normal_page.locator('html').get_attribute('data-theme')=='light'
     normal.close()
     blocked=browser.new_context(color_scheme='dark')
     blocked.add_init_script("Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Blocked','SecurityError')}})")
     blocked_page=blocked.new_page()
     blocked_page.goto(BASE+'/index.html',wait_until='networkidle')
-    assert blocked_page.locator('html').get_attribute('data-theme')=='dark'
-    blocked_page.locator('#theme-toggle').click()
     assert blocked_page.locator('html').get_attribute('data-theme')=='light'
+    blocked_page.locator('#theme-toggle').click()
+    assert blocked_page.locator('html').get_attribute('data-theme')=='dark'
     assert blocked_page.locator('.news-year-group p:visible').count()==6
     print('System theme, normal motion, and blocked-storage fallback checked',flush=True)
+    # Confirm that an OS-level dark preference does not override the site default.
+    assert blocked_page.locator('#email-address').get_attribute('href')=='mailto:rzhu16@uchicago.edu'
+    blocked_page.evaluate("Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async(value)=>{window.copiedEmail=value}}})")
+    blocked_page.locator('#copy-email').click()
+    assert blocked_page.evaluate('window.copiedEmail')=='rzhu16@uchicago.edu'
+    assert blocked_page.locator('#email-status').inner_text()=='Email address copied.'
+    blocked_page.evaluate("Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw new Error('denied')}}})")
+    blocked_page.locator('#copy-email').click()
+    assert blocked_page.evaluate('window.getSelection().toString()')=='rzhu16@uchicago.edu'
+    assert 'Address selected' in blocked_page.locator('#email-status').inner_text()
+    portrait=blocked_page.locator('.intro-photo img')
+    ratio=portrait.evaluate('(im)=>({natural:im.naturalWidth/im.naturalHeight,rendered:im.getBoundingClientRect().width/im.getBoundingClientRect().height,fit:getComputedStyle(im).objectFit,radius:getComputedStyle(im).borderRadius})')
+    assert abs(ratio['natural']-ratio['rendered'])<0.01,ratio
+    assert ratio['fit']=='contain' and ratio['radius']=='0px',ratio
+    print('Default light theme, email-copy paths, and uncropped portrait checked',flush=True)
     blocked.close()
     browser.close()
     assert not failures,failures

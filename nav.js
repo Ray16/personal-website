@@ -30,7 +30,6 @@
         window.matchMedia('(max-width: 760px)').addEventListener('change', function () { closeMenu(false); });
     }
     var toggle = document.getElementById('theme-toggle');
-    var systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
     function updateToggle() {
         if (!toggle) return;
         var dark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -44,14 +43,6 @@
         document.documentElement.setAttribute('data-theme', next);
         try { localStorage.setItem('theme', next); } catch (_) {}
         updateToggle();
-    });
-    systemTheme.addEventListener('change', function (e) {
-        var saved;
-        try { saved = localStorage.getItem('theme'); } catch (_) {}
-        if (!saved) {
-            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-            updateToggle();
-        }
     });
     var filters = document.querySelector('.news-filter');
     if (filters) {
@@ -102,6 +93,26 @@
             entry.appendChild(description);
         });
         filterNews('recent');
+    }
+    var email = document.getElementById('email-address');
+    var copyEmail = document.getElementById('copy-email');
+    var emailStatus = document.getElementById('email-status');
+    if (email && copyEmail && emailStatus) {
+        copyEmail.hidden = false;
+        copyEmail.addEventListener('click', async function () {
+            var address = email.textContent.trim();
+            try {
+                await navigator.clipboard.writeText(address);
+                emailStatus.textContent = 'Email address copied.';
+            } catch (_) {
+                var selection = window.getSelection();
+                var range = document.createRange();
+                range.selectNodeContents(email);
+                selection.removeAllRanges();
+                selection.addRange(range);
+                emailStatus.textContent = 'Address selected. Copy it to your clipboard.';
+            }
+        });
     }
     var top = document.createElement('button');
     top.className = 'scroll-top';

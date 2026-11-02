@@ -1,2 +1,2 @@
 playwright>=1.48
-playwright-stealth>=2.0
+-r publication-requirements.txt
